@@ -5,6 +5,11 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 
+app.use(cors({
+  origin: 'https://book_recommendation_app', 
+  methods: ['GET', 'POST'], 
+}));
+
 mongoose.connect("mongodb://127.0.0.1:27017/bookRec").then(res => {
     console.log("Succesfully db Connected")
 }).catch(err => console.log(err));
