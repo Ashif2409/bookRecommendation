@@ -35,7 +35,7 @@ export const Home = ({ data }) => {
         const userId = data._id
         try {
             // Send the review data for the current book to the backend
-            await axios.post("http://localhost:8080/review", { bookId: bookId, rate: rating, review: reviewText, userId: userId })
+            await axios.post("book-recommendation-woad.vercel.app/review", { bookId: bookId, rate: rating, review: reviewText, userId: userId })
                 .then(res => console.log(res))
             // Clear the review text after submission
             const newReviews = [...reviews];
@@ -68,7 +68,7 @@ export const Home = ({ data }) => {
     };
 
     const fetchUserReviews = async () => {
-        await axios.post('http://localhost:8080/user-reviews', { userId: data._id })
+        await axios.post('book-recommendation-woad.vercel.app/user-reviews', { userId: data._id })
             .then(res => {
                 setUserReviews(res.data);
                 const bookIds = res.data.map(review => review.bookId);
