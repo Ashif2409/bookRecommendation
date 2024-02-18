@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 
 app.use(cors({
-  origin: ['https://book_recommendation_app.vercel.app'], 
+  origin: [''], 
   methods: ['GET', 'POST'],
    credentials: true
 }));
