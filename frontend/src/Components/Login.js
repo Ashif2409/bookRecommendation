@@ -13,7 +13,7 @@ const Login = ({setData}) => {
     const handleSubmit=(e)=>{
         e.preventDefault();  
         const {name,password}=user;
-        axios.post("http://localhost:8080/login",user)
+        axios.post("book-recommendation-woad.vercel.app/login",user)
             .then(res=>{
                 setData(res.data.user);
                 navigate('/home');
